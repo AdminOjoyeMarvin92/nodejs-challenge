@@ -123,8 +123,9 @@ try {
 
 
 
-
-const [encrypted, iv, authTag] = aesCipher.encrypt('hello, world');
+// Auth und iv_Text file wahren nicht im richtigen encoding
+// es sit auch nicht documentiert welcher Byte Buffer zum auslesen Verwendet wurde daher eigener Schlüssel...
+const [encrypted, iv, authTag] = aesCipher.encrypt('Marv_673 enc');
 
 const decrypted = aesCipher.decrypt(encrypted, iv, authTag);
 
